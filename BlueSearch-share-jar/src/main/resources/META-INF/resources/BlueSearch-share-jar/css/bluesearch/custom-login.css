@@ -1,0 +1,17 @@
+body {
+	background-color: white !important;
+}
+
+#page_x002e_components_x002e_custom-login_x0023_default-body.login {
+	visibility: hidden;
+}
+
+/*
+.theme-company-logo, .product-name, form.login, .product-community {
+	display: none !important;
+}
+*/
+
+.product-community.visible {
+	display: block !important;
+}

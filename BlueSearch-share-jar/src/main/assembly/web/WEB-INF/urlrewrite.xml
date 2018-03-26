@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 3.0//EN" "http://tuckey.org/res/dtds/urlrewrite3.0.dtd">
+<urlrewrite use-query-string="true" decode-using="null">
+   
+   <rule>
+      <from>^/redirect/(.*)</from>
+      <to type="redirect">/share/public/$1</to>
+   </rule>
+   
+   <rule>
+      <from>^/(.*)access=public</from>
+      <to type="redirect">/share/public/$1</to>
+   </rule>
+
+   <rule>
+      <from>^/public/(.*)</from>
+      <to>/page/dologin?username=public&amp;password=XXXXX&amp;success=/share/$1</to>
+   </rule>
+
+<!--
+   <rule>
+      <from>^/page/dp/ws/faceted-search(.*)&amp;scope=(.*)&amp;sortField=null(.*)</from>
+      <to type="redirect">/page/site/deliberation/ws/faceted-search$1&amp;scope=all_sites&amp;sortField=cm:created&amp;sortAscending=false</to>
+   </rule>
+-->
+
+<!--
+   <rule>
+      <from>^/page/site/deliberation/ws/faceted-search(.*)&amp;scope=(.*)&amp;sortField=null(.*)</from>
+      <to>/page/site/deliberation/ws/faceted-search$1&amp;scope=all_sites&amp;sortField=cm:created&amp;sortAscending=false</to>
+   </rule>
+-->  
+   <!-- Quick Share doc -->
+   <rule>
+      <from>^/s/(.*)</from>
+      <to>/page/quickshare?id=$1</to>
+   </rule>
+
+   <!-- Spring Surf -->
+   <rule>
+      <from>^/proxy/(.*)</from>
+      <to>/page/proxy/$1</to>
+   </rule>
+   <rule>
+      <from>^/service/(.*)</from>
+      <to>/page/$1</to>
+   </rule>
+   <rule>
+      <from>^/feedservice/(.*)</from>
+      <to>/page/feed/$1</to>
+   </rule>
+   <rule>
+      <from>^/system/(.*)</from>
+      <to>/page/system/$1</to>
+   </rule>
+   <!-- the webscripts which should not be protected by the Authentication Filter -->
+   <rule>
+      <from>^/noauth/(.*)</from>
+      <to>/page/$1</to>
+   </rule>
+   <rule>
+      <from>^/res/yui/uploader/assets/uploader.swf\?(.*)</from>
+      <to type="redirect">uploader.swf</to>
+   </rule>
+   <rule>
+      <from>^/yui/uploader/assets/uploader.swf\?(.*)</from>
+      <to type="redirect">uploader.swf</to>
+   </rule>
+   <rule>
+      <from>^/res/(.*)</from>
+      <to>/page/resource/$1</to>
+   </rule>
+
+</urlrewrite>

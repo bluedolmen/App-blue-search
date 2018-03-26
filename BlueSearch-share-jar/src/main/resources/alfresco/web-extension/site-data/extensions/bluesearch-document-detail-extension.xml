@@ -1,0 +1,69 @@
+<extension>
+	<modules>
+		<module>
+			<id>BlueSearch Document Details</id>
+			<version>1.0.1</version>
+			<auto-deploy>true</auto-deploy>
+			<configurations>
+			</configurations>
+			<components>
+                <component>
+                    <region-id>node-header</region-id>
+                    <source-id>document-details</source-id>
+                    <scope>template</scope>
+                    <sub-components>
+                        <sub-component id="default">
+                            <evaluations>
+                                <evaluation id="disable-header">
+                                    <render>false</render>
+                                </evaluation>
+                            </evaluations>
+                        </sub-component>
+                    </sub-components>
+                </component>
+                <component>
+                    <region-id>document-tags</region-id>
+                    <source-id>document-details</source-id>
+                    <scope>template</scope>
+                    <sub-components>
+                        <sub-component id="default">
+                            <evaluations>
+                                <evaluation id="disable-header">
+                                    <render>false</render>
+                                </evaluation>
+                            </evaluations>
+                        </sub-component>
+                    </sub-components>
+                </component>
+                <component>
+                    <region-id>document-links</region-id>
+                    <source-id>document-details</source-id>
+                    <scope>template</scope>
+                    <sub-components>
+                        <sub-component id="default">
+                            <evaluations>
+                                <evaluation id="disable-links">
+                                    <render>false</render>
+                                </evaluation>
+                            </evaluations>
+                        </sub-component>
+                    </sub-components>
+                </component>
+                <component>
+                    <region-id>comments</region-id>
+                    <source-id>document-details</source-id>
+                    <scope>template</scope>
+                    <sub-components>
+                        <sub-component id="default">
+                            <evaluations>
+                                <evaluation id="disable-comments">
+                                    <render>false</render>
+                                </evaluation>
+                            </evaluations>
+                        </sub-component>
+                    </sub-components>
+                </component>
+            </components>
+    		</module>
+	</modules>
+</extension>

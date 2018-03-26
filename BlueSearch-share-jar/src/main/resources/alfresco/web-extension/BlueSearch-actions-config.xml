@@ -1,0 +1,31 @@
+<alfresco-config>
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- + Actions configuration                                                                                               + -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+	<config evaluator="string-compare" condition="DocLibActions">
+	<!--
+		<actions>
+			<action id="doclib.action.send-an-email-info" type="link" icon="send-an-email" label="actions.document.send-an-email-for-more-info">
+				<param name="href">mailto:assemblees@nouvelle-aquitaine.fr?subject=[GED Délibélu] Demande d'informations&amp;body=Bonjour,%0d%0a%0d%0aje souhaite avoir plus d'informations sur ce document :%0d%0a%0d%0a*%20https://deliberations.nouvelle-aquitaine.fr/share/redirect/{documentDetailsUrl}%0d%0a%0d%0a### INDIQUEZ ICI VOTRE DEMANDE ###%0d%0a%0d%0aMerci de bien vouloir me recontacter.</param>
+			</action>
+			<action id="doclib.action.send-an-email-privacy" type="link" icon="send-an-email" label="actions.document.send-an-email-about-privacy">
+				<param name="href">mailto:assemblees@nouvelle-aquitaine.fr?subject=[GED Délibélu] Problème de confidentialité&amp;body=Bonjour,%0d%0a%0d%0aIl y a un problème de confidentialité concernant le document suivant :%20:%0d%0a%0d%0a*%20https://deliberations.nouvelle-aquitaine.fr/share/redirect/{documentDetailsUrl}%0d%0a%0d%0aMerci de bien vouloir me recontacter.</param>
+			</action>			
+		</actions>
+		
+		<actionGroups>		
+			<actionGroup id="document-browse">
+				<action index="190" id="doclib.action.send-an-email-info" />
+				<action index="191" id="doclib.action.send-an-email-privacy" />
+			</actionGroup>
+			<actionGroup id="document-details">
+				<action index="190" id="doclib.action.send-an-email-info" />
+				<action index="191" id="doclib.action.send-an-email-privacy" />
+			</actionGroup>
+		</actionGroups>
+	-->		
+	</config>
+	
+</alfresco-config>

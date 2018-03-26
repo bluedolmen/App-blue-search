@@ -1,0 +1,47 @@
+/* President entry */
+label[for$='de_president-entry'] {
+	display: none!important;
+}
+
+#page_x002e_search_x002e_advsearch_x0023_default_0_prop_de_president-entry {
+	display: none;
+}
+
+/* Mandature entry */
+label[for$='de_mandature-entry'] {
+	display: none!important;
+}
+
+#page_x002e_search_x002e_advsearch_x0023_default_0_prop_de_mandature-entry {
+	display: none;
+}
+
+/* Numéro interne */
+label[for$='de_numint'] {
+	display: none!important;
+}
+
+#page_x002e_search_x002e_advsearch_x0023_default_0_prop_de_numint {
+	display: none;
+}
+
+/* Seance entry */
+/*
+label[for$='de_seance-entry'] {
+	display: none!important;
+}
+
+#page_x002e_search_x002e_advsearch_x0023_default_0_de_seance-entry {
+	display: none;
+}
+*/
+
+/* Service entry */
+label[for$='de_service'] {
+	display: none!important;
+}
+
+#page_x002e_search_x002e_advsearch_x0023_default_0_prop_de_service {
+	display: none;
+}
+

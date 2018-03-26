@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>BlueSearch-share-jar</artifactId>
+	<name>Alfresco Share JAR Module</name>
+	<!--  <packaging>jar</packaging> -->
+	<packaging>war</packaging>
+	<description>Sample Share JAR Module (to be included in the share.war) - part of AIO - SDK 3</description>
+
+	<parent>
+		<groupId>org.bluedolmen.alfresco.search</groupId>
+		<artifactId>BlueSearch</artifactId>
+		<version>1.1-SNAPSHOT</version>
+	</parent>
+
+	<!-- Following dependencies are needed for compiling Java code in src/main/java; 
+		<scope>provided</scope> is inherited for each of the following; for more 
+		info, please refer to alfresco-platform-distribution POM -->
+	<dependencies>
+		<dependency>
+			<groupId>${alfresco.groupId}</groupId>
+			<artifactId>share</artifactId>
+			<classifier>classes</classifier>
+		</dependency>
+
+		<dependency>
+			<groupId>org.alfresco.surf</groupId>
+			<artifactId>spring-surf-api</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <id>build-amp-file</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <appendAssemblyId>false</appendAssemblyId>
+                            <descriptor>src/main/assembly/amp.xml</descriptor>
+                        </configuration>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.alfresco.maven.plugin</groupId>
+                        <artifactId>alfresco-maven-plugin</artifactId>
+                        <version>${alfresco.sdk.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+<!--
+			<plugin>
+				<groupId>com.bluexml.side.maven.plugins</groupId>
+				<artifactId>side-maven-plugin</artifactId>
+				<version>${side.maven.plugin.version}</version>
+				<executions>
+					<execution>
+						<id>side-generate-resources</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>side-generation</goal>
+						</goals>
+						<configuration>
+							<techVersion>alfresco_share_5</techVersion>
+							<libs>${side.models.libs}</libs>
+							<models>${side.models.paths}</models>
+							<projects>${side.projects.paths}</projects>
+							<isSDK3>true</isSDK3>
+							<repositories>
+								<repository>
+									<id>SIDE</id>
+									<layout>p2</layout>
+									<url>${side.p2.repo}</url>
+								</repository>
+							</repositories>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+-->
+			<plugin>
+        		<groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-dependency-plugin</artifactId>
+		        <version>3.0.2</version>
+		        <executions>
+					<execution>
+						<id>copy</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy</goal>
+						</goals>
+					</execution>
+		        </executions>
+		        <configuration>
+					<artifactItems>
+						<artifactItem>
+							<groupId>de.fmaul</groupId>
+							<artifactId>javascript-console-share</artifactId>
+							<type>amp</type>
+							<!-- <overWrite>false</overWrite>
+							<outputDirectory>${project.build.directory}/alternateLocation</outputDirectory>
+							<destFileName>optional-new-name.jar</destFileName> -->
+						</artifactItem>
+					</artifactItems>
+					<outputDirectory>${project.build.directory}/dependencies</outputDirectory>
+					<!-- <overWriteReleases>false</overWriteReleases>
+					<overWriteSnapshots>true</overWriteSnapshots> -->
+				</configuration>
+	      	</plugin>
+		</plugins>
+	</build>
+
+</project>

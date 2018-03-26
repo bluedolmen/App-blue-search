@@ -1,0 +1,22 @@
+/*
+.node-info {
+	display: none;
+}
+
+.node-header .node-action {
+	padding-top: 0px !important;
+}
+
+#SHARE_HEADER {
+	display: none;
+	min-height: none;
+}
+*/
+
+div#onActionCopyTo {
+	display: none;
+}
+
+div#onActionAssignWorkflow {
+	display: none;
+}

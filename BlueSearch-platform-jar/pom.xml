@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>BlueSearch-platform-jar</artifactId>
+	<name>Alfresco Platform/Repository JAR Module</name>
+	<description>Platform/Repo JAR Module (to be included in the alfresco.war) - part of AIO - SDK 3</description>
+	<packaging>jar</packaging>
+	
+	<parent>
+		<groupId>org.bluedolmen.alfresco.search</groupId>
+		<artifactId>BlueSearch</artifactId>
+		<version>1.1-SNAPSHOT</version>
+	</parent>
+
+	<dependencies>
+            	<dependency>
+			<groupId>de.fmaul</groupId>
+			<artifactId>javascript-console-repo</artifactId>
+			<version>0.6</version>
+			<type>amp</type>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.6</version>
+				<executions>
+					<execution>
+						<id>build-amp-file</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<appendAssemblyId>false</appendAssemblyId>
+							<descriptor>src/main/assembly/amp.xml</descriptor>
+						</configuration>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>org.alfresco.maven.plugin</groupId>
+						<artifactId>alfresco-maven-plugin</artifactId>
+						<version>${alfresco.sdk.version}</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+<!--
+			<plugin>
+				<groupId>com.bluexml.side.maven.plugins</groupId>
+				<artifactId>side-maven-plugin</artifactId>
+				<version>${side.maven.plugin.version}</version>
+				<executions>
+					<execution>
+						<id>side-generate-resources</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>side-generation</goal>
+						</goals>
+						<configuration>
+							<techVersion>alfresco_platform_5</techVersion>
+							<libs>${side.models.libs}</libs>
+							<models>${side.models.paths}</models>
+							<projects>${side.projects.paths}</projects>
+							<repositories>
+								<repository>
+									<id>SIDE</id>
+									<layout>p2</layout>
+									<url>${side.p2.repo}</url>
+								</repository>
+							</repositories>
+							<isSDK3>true</isSDK3>
+							<jvmArgs>
+							</jvmArgs>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+-->
+			<plugin>
+        		<groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-dependency-plugin</artifactId>
+		        <version>3.0.2</version>
+		        <executions>
+					<execution>
+						<id>copy</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy</goal>
+						</goals>
+					</execution>
+		        </executions>
+		        <configuration>
+					<artifactItems>
+						<artifactItem>
+							<groupId>de.fmaul</groupId>
+							<artifactId>javascript-console-repo</artifactId>
+							<type>amp</type>
+						</artifactItem>
+					</artifactItems>
+					<outputDirectory>${project.build.directory}/dependencies</outputDirectory>
+				</configuration>
+	      	</plugin>
+		</plugins>
+	</build>
+
+</project>

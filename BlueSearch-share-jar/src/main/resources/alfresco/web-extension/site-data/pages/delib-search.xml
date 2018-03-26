@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page>
+   <template-instance>delib-search</template-instance>
+   <authentication>user</authentication>
+   <components>
+
+      <component>
+         <region-id>components</region-id>
+         <url>/components/guest/login</url>
+      </component>
+
+   </components>
+</page>

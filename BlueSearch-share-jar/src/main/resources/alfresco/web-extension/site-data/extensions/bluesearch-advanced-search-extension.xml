@@ -1,0 +1,20 @@
+<extension>
+	<modules>
+		<module>
+			<id>BlueSearch Advanced Search Menu</id>
+			<version>1.0.0</version>
+			<auto-deploy>true</auto-deploy>
+<!-- 
+			<configurations>
+				<config replace='true' evaluator='string-compare' condition='AdvancedSearch'>
+				   <advanced-search>
+				      <forms>
+				         <form label='XXX' description='YYY'>ns:typeName</form>
+				      </forms>
+				   </advanced-search>
+				</config>
+			</configurations>
+-->
+    		</module>
+	</modules>
+</extension>

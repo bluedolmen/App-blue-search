@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!-- The bootstrap-context.xml file is used for patch definitions, importers, 
+		 workflow, and loading custom content models.  -->
+
+	<!--
+	    <bean id="BlueSearch-platform.dictionaryBootstrap" parent="dictionaryModelBootstrap" depends-on="dictionaryBootstrap">
+	    </bean>
+	
+	    <bean id="org_alfresco_module_bootstrapSpaces" class="org.alfresco.repo.module.ImporterModuleComponent" parent="module.baseComponent">
+	    </bean>
+    -->
+    
+</beans>

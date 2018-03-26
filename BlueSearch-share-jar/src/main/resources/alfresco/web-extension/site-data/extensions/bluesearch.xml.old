@@ -1,0 +1,27 @@
+<extension>
+	<modules>
+		<module>
+			<id>BlueSearch Widgets</id>
+			<version>1.0.0</version>
+			<auto-deploy>true</auto-deploy>
+			<configurations>
+				<config evaluator="string-compare" condition="WebFramework"
+					replace="false">
+					<web-framework>
+						<dojo-pages>
+							<packages>
+								<package name="bluesearch" location="resources/BlueSearch-share-jar/js/org/bluedolmen/alfresco/share" />
+							</packages>
+						</dojo-pages>
+					</web-framework>
+				</config>
+			</configurations>
+			<customizations>
+				<customization>
+					<targetPackageRoot>org.alfresco.share.pages.faceted-search</targetPackageRoot>
+					<sourcePackageRoot>org.bluedolmen.alfresco.share.pages.faceted-search</sourcePackageRoot>
+				</customization>
+			</customizations>
+		</module>
+	</modules>
+</extension>

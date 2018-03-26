@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="fixacp" default="fix" basedir=".">
+
+    <property name="prefix" value="" />
+	<property name="working_dir" value="." />
+    <property name="tmp_dir" value="tmp" />
+
+    <target name="fix">
+
+    		<echo>${prefix}</echo>
+        <fail message="Missing ACP file '${prefix}.acp', use -Dprefix=[FILENAME]" >
+            <condition>
+                <not>
+                    <available file="${working_dir}/${prefix}.acp" />
+                </not>
+            </condition>
+        </fail>
+
+        <echo message="Fixing Categories in ACP File" />
+
+        <unzip src="${working_dir}/${prefix}.acp" dest="${working_dir}/${tmp_dir}" />
+        <replace file="${working_dir}/${tmp_dir}/${prefix}.xml" token="&gt;/cm:generalclassifiable" value="&gt;/cm:categoryRoot/cm:generalclassifiable" />
+        <replace file="${working_dir}/${tmp_dir}/${prefix}.xml" token="_xfeff_" value="" />
+        <zip destfile="${working_dir}/${prefix}-fixed.acp" basedir="${working_dir}/${tmp_dir}" />
+        <!--<delete dir="${working_dir}/${tmp_dir}" />-->
+        
+    </target>
+
+</project>

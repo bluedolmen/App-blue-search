@@ -1,0 +1,32 @@
+.share-form .form-container .form-fields {
+	border: none!important;
+	background-color: white!important;
+}
+
+.search .keywords-box .share-form .form-container .form-fields .set > div {
+    float: left;
+    font-weight: bold;
+    width: 200px;
+    text-align: right;
+    padding-right: 5px;
+}
+
+#page_x002e_search_x002e_advsearch_x0023_default-body {
+	margin: auto;
+	width: 60%;
+}
+
+/* Remove MORE_INFO icon in result list page */
+span[id$='MORE_INFO'] {
+	display: none;
+}
+
+/* One search button only in adv search form */
+#page_x002e_search_x002e_advsearch div .search > .yui-gc:first-child {
+	display: none;
+}
+
+#page_x002e_search_x002e_advsearch_x0023_default-body.search > .yui-gc > .yui-u.first {
+	visibility: hidden;
+}
+

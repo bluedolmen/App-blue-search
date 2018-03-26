@@ -1,0 +1,17 @@
+<alfresco-config area="mimetype-map">
+
+   <config evaluator="string-compare" condition="Mimetype Map">
+      <mimetypes>
+
+         <mimetype mimetype="text/css" display="CSS mimetype">
+            <extension>css</extension>
+         </mimetype>
+
+         <mimetype mimetype="image/svg+xml" display="SVG mimetype">
+            <extension>svg</extension>
+         </mimetype>
+
+      </mimetypes>
+   </config>
+
+</alfresco-config>
